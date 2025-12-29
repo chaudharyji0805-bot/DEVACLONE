@@ -5,16 +5,16 @@ from pyrogram import filters, Client
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
 import config
-# from VIP_INNOCENT import app
-from VIP_INNOCENT.misc import _boot_
-from VIP_INNOCENT.plugins.sudo.sudoers import sudoers_list
-from VIP_INNOCENT.utils.database import get_served_chats, get_served_users, get_sudoers
-from VIP_INNOCENT.utils import bot_sys_stats
-from VIP_INNOCENT.utils.database import (
+# from VIP_DEVA import app
+from VIP_DEVA.misc import _boot_
+from VIP_DEVA.plugins.sudo.sudoers import sudoers_list
+from VIP_DEVA.utils.database import get_served_chats, get_served_users, get_sudoers
+from VIP_DEVA.utils import bot_sys_stats
+from VIP_DEVA.utils.database import (
     add_served_chat_clone,
     add_served_user_clone,
     blacklisted_chats,
@@ -22,15 +22,15 @@ from VIP_INNOCENT.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from VIP_INNOCENT.utils.decorators.language import LanguageStart
-from VIP_INNOCENT.utils.formatters import get_readable_time
-from VIP_INNOCENT.utils.inline import help_pannel, private_panel, start_panel
+from VIP_DEVA.utils.decorators.language import LanguageStart
+from VIP_DEVA.utils.formatters import get_readable_time
+from VIP_DEVA.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS, OWNER_ID, STREAMI_PICS
 from strings import get_string
 
-from VIP_INNOCENT.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
+from VIP_DEVA.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
 
-from VIP_INNOCENT.cplugin.setinfo import get_logging_status, get_log_channel
+from VIP_DEVA.cplugin.setinfo import get_logging_status, get_log_channel
 
 #--------------------------
 
