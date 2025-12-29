@@ -10,15 +10,15 @@ from git.exc import GitCommandError, InvalidGitRepositoryError
 from pyrogram import filters
 
 import config
-from VIP_INNOCENT import app
-from VIP_INNOCENT.misc import HAPP, SUDOERS, XCB
-from VIP_INNOCENT.utils.database import (
+from VIP_DEVA import app
+from VIP_DEVA.misc import HAPP, SUDOERS, XCB
+from VIP_DEVA.utils.database import (
     get_active_chats,
     remove_active_chat,
     remove_active_video_chat,
 )
-from VIP_INNOCENT.utils.decorators.language import language
-from VIP_INNOCENT.utils.pastebin import INNOCENTBin
+from VIP_DEVA.utils.decorators.language import language
+from VIP_DEVA.utils.pastebin import DEVABin
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -68,7 +68,7 @@ async def update_(client, message, _):
     _update_response_ = "<b>ᴀ ɴᴇᴡ ᴜᴩᴅᴀᴛᴇ ɪs ᴀᴠᴀɪʟᴀʙʟᴇ ғᴏʀ ᴛʜᴇ ʙᴏᴛ !</b>\n\n➣ ᴩᴜsʜɪɴɢ ᴜᴩᴅᴀᴛᴇs ɴᴏᴡ\n\n<b><u>ᴜᴩᴅᴀᴛᴇs:</u></b>\n\n"
     _final_updates_ = _update_response_ + updates
     if len(_final_updates_) > 4096:
-        url = await INNOCENTBin(updates)
+        url = await DEVABin(updates)
         nrs = await response.edit(
             f"<b>ᴀ ɴᴇᴡ ᴜᴩᴅᴀᴛᴇ ɪs ᴀᴠᴀɪʟᴀʙʟᴇ ғᴏʀ ᴛʜᴇ ʙᴏᴛ !</b>\n\n➣ ᴩᴜsʜɪɴɢ ᴜᴩᴅᴀᴛᴇs ɴᴏᴡ\n\n<u><b>ᴜᴩᴅᴀᴛᴇs :</b></u>\n\n<a href={url}>ᴄʜᴇᴄᴋ ᴜᴩᴅᴀᴛᴇs</a>"
         )
