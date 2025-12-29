@@ -2,13 +2,13 @@ from pyrogram import filters, Client
 from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
 from pyrogram.types import Message
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.utils.database import set_cmode
-from VIP_INNOCENT.utils.decorators.admins import AdminActual
+from VIP_DEVA import app
+from VIP_DEVA.utils.database import set_cmode
+from VIP_DEVA.utils.decorators.admins import AdminActual
 from config import BANNED_USERS
 from time import time
 import asyncio
-from VIP_INNOCENT.utils.extraction import extract_user
+from VIP_DEVA.utils.extraction import extract_user
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
