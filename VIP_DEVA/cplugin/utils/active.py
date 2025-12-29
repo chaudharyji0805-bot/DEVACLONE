@@ -1,4 +1,4 @@
-from VIP_INNOCENT.misc import clonedb
+from VIP_DEVA.misc import clonedb
 
 active = []
 stream = {}
