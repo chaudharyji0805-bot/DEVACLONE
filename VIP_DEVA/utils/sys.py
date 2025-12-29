@@ -2,8 +2,8 @@ import time
 
 import psutil
 
-from VIP_INNOCENT.misc import _boot_
-from VIP_INNOCENT.utils.formatters import get_readable_time
+from VIP_DEVA.misc import _boot_
+from VIP_DEVA.utils.formatters import get_readable_time
 
 
 async def bot_sys_stats():
