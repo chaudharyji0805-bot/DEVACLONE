@@ -5,8 +5,8 @@ from pyrogram.types import (
 )
 from youtubesearchpython.__future__ import VideosSearch
 from pyrogram import filters, Client
-from VIP_INNOCENT import app
-from VIP_INNOCENT.utils.inlinequery import answer
+from VIP_DEVA import app
+from VIP_DEVA.utils.inlinequery import answer
 from config import BANNED_USERS
 
 
