@@ -1,9 +1,9 @@
 from pyrogram import filters
 import random
-from VIP_INNOCENT import YouTube, app
-from VIP_INNOCENT.utils.channelplay import get_channeplayCB
-from VIP_INNOCENT.utils.decorators.language import languageCB
-from VIP_INNOCENT.utils.stream.stream import stream
+from VIP_DEVA import YouTube, app
+from VIP_DEVA.utils.channelplay import get_channeplayCB
+from VIP_DEVA.utils.decorators.language import languageCB
+from VIP_DEVA.utils.stream.stream import stream
 from config import BANNED_USERS
 
 
