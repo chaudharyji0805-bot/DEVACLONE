@@ -3,7 +3,7 @@ import logging
 from googlesearch import search
 from pyrogram import filters
 
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 from SafoneAPI import SafoneAPI
 
 
