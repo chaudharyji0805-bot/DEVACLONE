@@ -2,14 +2,14 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 import config
-from VIP_INNOCENT import YouTube, app
-from VIP_INNOCENT.core.call import INNOCENT
-from VIP_INNOCENT.misc import db
-from VIP_INNOCENT.utils.database import get_loop
-from VIP_INNOCENT.utils.decorators import AdminRightsCheck
-from VIP_INNOCENT.utils.inline import close_markup, stream_markup
-from VIP_INNOCENT.utils.stream.autoclear import auto_clean
-from VIP_INNOCENT.utils.thumbnails import get_thumb
+from VIP_DEVA import YouTube, app
+from VIP_DEVA.core.call import DEVA
+from VIP_DEVA.misc import db
+from VIP_DEVA.utils.database import get_loop
+from VIP_DEVA.utils.decorators import AdminRightsCheck
+from VIP_DEVA.utils.inline import close_markup, stream_markup
+from VIP_DEVA.utils.stream.autoclear import auto_clean
+from VIP_DEVA.utils.thumbnails import get_thumb
 from config import BANNED_USERS
 
 
@@ -48,7 +48,7 @@ async def skip(cli, message: Message, _, chat_id):
                                         ),
                                         reply_markup=close_markup(_),
                                     )
-                                    await INNOCENT.stop_stream(chat_id)
+                                    await DEVA.stop_stream(chat_id)
                                 except:
                                     return
                                 break
@@ -75,7 +75,7 @@ async def skip(cli, message: Message, _, chat_id):
                     reply_markup=close_markup(_),
                 )
                 try:
-                    return await INNOCENT.stop_stream(chat_id)
+                    return await DEVA.stop_stream(chat_id)
                 except:
                     return
         except:
@@ -86,7 +86,7 @@ async def skip(cli, message: Message, _, chat_id):
                     ),
                     reply_markup=close_markup(_),
                 )
-                return await INNOCENT.stop_stream(chat_id)
+                return await DEVA.stop_stream(chat_id)
             except:
                 return
     queued = check[0]["file"]
@@ -111,7 +111,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await INNOCENT.skip_stream(chat_id, link, video=status, image=image)
+            await DEVA.skip_stream(chat_id, link, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup(_, chat_id)
@@ -144,7 +144,7 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             image = None
         try:
-            await INNOCENT.skip_stream(chat_id, file_path, video=status, image=image)
+            await DEVA.skip_stream(chat_id, file_path, video=status, image=image)
         except:
             return await mystic.edit_text(_["call_6"])
         button = stream_markup(_, chat_id)
@@ -164,7 +164,7 @@ async def skip(cli, message: Message, _, chat_id):
         await mystic.delete()
     elif "index_" in queued:
         try:
-            await INNOCENT.skip_stream(chat_id, videoid, video=status)
+            await DEVA.skip_stream(chat_id, videoid, video=status)
         except:
             return await message.reply_text(_["call_6"])
         button = stream_markup(_, chat_id)
@@ -186,7 +186,7 @@ async def skip(cli, message: Message, _, chat_id):
             except:
                 image = None
         try:
-            await INNOCENT.skip_stream(chat_id, queued, video=status, image=image)
+            await DEVA.skip_stream(chat_id, queued, video=status, image=image)
         except:
             return await message.reply_text(_["call_6"])
         if videoid == "telegram":
