@@ -6,22 +6,22 @@ from pyrogram.types import InlineKeyboardMarkup, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from VIP_INNOCENT import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app, LOGGER
-from VIP_INNOCENT.core.call import INNOCENT
-from VIP_INNOCENT.utils import seconds_to_min, time_to_seconds
-from VIP_INNOCENT.utils.channelplay import get_channeplayCB
-from VIP_INNOCENT.utils.decorators.language import languageCB
-from VIP_INNOCENT.utils.decorators.play import PlayWrapper
-from VIP_INNOCENT.utils.formatters import formats
-from VIP_INNOCENT.utils.inline import (
+from VIP_DEVA import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app, LOGGER
+from VIP_DEVA.core.call import DEVA
+from VIP_DEVA.utils import seconds_to_min, time_to_seconds
+from VIP_DEVA.utils.channelplay import get_channeplayCB
+from VIP_DEVA.utils.decorators.language import languageCB
+from VIP_DEVA.utils.decorators.play import PlayWrapper
+from VIP_DEVA.utils.formatters import formats
+from VIP_DEVA.utils.inline import (
     botplaylist_markup,
     livestream_markup,
     playlist_markup,
     slider_markup,
     track_markup,
 )
-from VIP_INNOCENT.utils.logger import play_logs
-from VIP_INNOCENT.utils.stream.stream import stream
+from VIP_DEVA.utils.logger import play_logs
+from VIP_DEVA.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
 
 
@@ -297,7 +297,7 @@ async def play_commnd(
             return await mystic.delete()
         else:
             try:
-                await INNOCENT.stream_call(url)
+                await DEVA.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(_["black_9"])
                 return await app.send_message(
