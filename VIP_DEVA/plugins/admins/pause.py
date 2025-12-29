@@ -1,11 +1,11 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.core.call import INNOCENT
-from VIP_INNOCENT.utils.database import is_music_playing, music_off
-from VIP_INNOCENT.utils.decorators import AdminRightsCheck
-from VIP_INNOCENT.utils.inline import close_markup
+from VIP_DEVA import app
+from VIP_DEVA.core.call import DEVA
+from VIP_DEVA.utils.database import is_music_playing, music_off
+from VIP_DEVA.utils.decorators import AdminRightsCheck
+from VIP_DEVA.utils.inline import close_markup
 from config import BANNED_USERS
 
 
@@ -15,7 +15,7 @@ async def pause_admin(cli, message: Message, _, chat_id):
     if not await is_music_playing(chat_id):
         return await message.reply_text(_["admin_1"])
     await music_off(chat_id)
-    await INNOCENT.pause_stream(chat_id)
+    await DEVA.pause_stream(chat_id)
     await message.reply_text(
         _["admin_2"].format(message.from_user.mention), reply_markup=close_markup(_)
     )
