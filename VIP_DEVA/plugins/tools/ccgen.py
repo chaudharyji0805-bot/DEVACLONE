@@ -1,6 +1,6 @@
 import re
 from pyrogram import filters, enums
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 
 import io
 import random
