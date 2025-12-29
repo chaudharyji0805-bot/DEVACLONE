@@ -1,5 +1,5 @@
 import requests
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 from pyrogram.types import Message
 from pyrogram.enums import ChatAction, ParseMode
 from pyrogram import filters
