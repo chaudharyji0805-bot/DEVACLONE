@@ -10,10 +10,10 @@ from pyrogram.types import (
     Message,
 )
 from config import LOGGER_ID as LOG_GROUP_ID
-from VIP_INNOCENT import app
-from VIP_INNOCENT.core.userbot import Userbot
-from VIP_INNOCENT.utils.database import delete_served_chat
-from VIP_INNOCENT.utils.database import get_assistant
+from VIP_DEVA import app
+from VIP_DEVA.core.userbot import Userbot
+from VIP_DEVA.utils.database import delete_served_chat
+from VIP_DEVA.utils.database import get_assistant
 
 
 photo = [
