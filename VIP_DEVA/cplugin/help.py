@@ -3,18 +3,18 @@ from typing import Union
 from pyrogram import filters, types, Client
 from pyrogram.types import InlineKeyboardMarkup, Message
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.utils import first_page, second_page
-from VIP_INNOCENT.utils.database import get_lang
-from VIP_INNOCENT.utils.decorators.language import LanguageStart, languageCB
-from VIP_INNOCENT.utils.inline.help import help_back_markup, private_help_panel
+from VIP_DEVA import app
+from VIP_DEVA.utils import first_page, second_page
+from VIP_DEVA.utils.database import get_lang
+from VIP_DEVA.utils.decorators.language import LanguageStart, languageCB
+from VIP_DEVA.utils.inline.help import help_back_markup, private_help_panel
 from config import BANNED_USERS, HELP_IMG_URL, SUPPORT_CHAT
 from strings import get_string, helpers
-from VIP_INNOCENT.misc import SUDOERS
+from VIP_DEVA.misc import SUDOERS
 from time import time
 import asyncio
-from VIP_INNOCENT.utils.extraction import extract_user
-from VIP_INNOCENT.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
+from VIP_DEVA.utils.extraction import extract_user
+from VIP_DEVA.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
@@ -97,7 +97,7 @@ async def help_com_group(client, message: Message, _):
     await message.reply_text(_["help_2"], reply_markup=InlineKeyboardMarkup(keyboard))
 
 
-# INNOCENT
+# DEVA
 @Client.on_callback_query(filters.regex("help_callback") & ~BANNED_USERS)
 @languageCB
 async def helper_cb(client, CallbackQuery, _):
@@ -107,7 +107,7 @@ async def helper_cb(client, CallbackQuery, _):
     if cb == "hb9":
         if CallbackQuery.from_user.id not in SUDOERS:
             return await CallbackQuery.answer(
-                "😎 Pehle Innocent Ko Papa Bol Jake 😆😆", show_alert=True
+                "😎 Pehle DEVA Ko Papa Bol Jake 😆😆", show_alert=True
             )
         else:
             await CallbackQuery.edit_message_text(helpers.HELP_9, reply_markup=keyboard)
