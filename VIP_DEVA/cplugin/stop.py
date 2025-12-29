@@ -1,11 +1,11 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.core.call import INNOCENT
-from VIP_INNOCENT.utils.database import set_loop
-from VIP_INNOCENT.utils.decorators import AdminRightsCheck
-from VIP_INNOCENT.utils.inline import close_markup
+from VIP_DEVA import app
+from VIP_DEVA.core.call import DEVA
+from VIP_DEVA.utils.database import set_loop
+from VIP_DEVA.utils.decorators import AdminRightsCheck
+from VIP_DEVA.utils.inline import close_markup
 from config import BANNED_USERS
 
 
@@ -21,7 +21,7 @@ from config import BANNED_USERS
 async def stop_music(cli, message: Message, _, chat_id):
     if not len(message.command) == 1:
         return
-    await INNOCENT.stop_stream(chat_id)
+    await DEVA.stop_stream(chat_id)
     await set_loop(chat_id, 0)
     await message.reply_text(
         _["admin_5"].format(message.from_user.mention), reply_markup=close_markup(_)
