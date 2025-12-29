@@ -1,7 +1,7 @@
 from io import BytesIO
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 from httpx import AsyncClient, Timeout
 
 # -----------------------------------------------------------------
