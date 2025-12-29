@@ -9,17 +9,17 @@ from pyrogram.types import InputMediaPhoto, Message
 from pytgcalls.__version__ import __version__ as pytgver
 
 import config
-from VIP_INNOCENT import app
-from VIP_INNOCENT.core.userbot import assistants
-from VIP_INNOCENT.misc import SUDOERS, mongodb
-from VIP_INNOCENT.plugins import ALL_MODULES
-from VIP_INNOCENT.utils.database import (
+from VIP_DEVA import app
+from VIP_DEVA.core.userbot import assistants
+from VIP_DEVA.misc import SUDOERS, mongodb
+from VIP_DEVA.plugins import ALL_MODULES
+from VIP_DEVA.utils.database import (
     get_served_chats_clone,
     get_served_users_clone,
     get_sudoers,
 )
-from VIP_INNOCENT.utils.decorators.language import language, languageCB
-from VIP_INNOCENT.utils.inline.stats import back_stats_buttons, stats_buttons
+from VIP_DEVA.utils.decorators.language import language, languageCB
+from VIP_DEVA.utils.inline.stats import back_stats_buttons, stats_buttons
 from config import BANNED_USERS
 
 
