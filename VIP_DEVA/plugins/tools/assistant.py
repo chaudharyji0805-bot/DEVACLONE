@@ -1,8 +1,8 @@
-from VIP_INNOCENT.core.userbot import assistants
-from VIP_INNOCENT import userbot as us, app
+from VIP_DEVA.core.userbot import assistants
+from VIP_DEVA import userbot as us, app
 from pyrogram import filters
 from pyrogram.types import Message
-from VIP_INNOCENT.misc import SUDOERS
+from VIP_DEVA.misc import SUDOERS
 from config import BANNED_USERS, OWNER_ID
 
 
