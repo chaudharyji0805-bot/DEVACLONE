@@ -1,8 +1,8 @@
 import random
 from typing import Dict, List, Union
 
-from VIP_INNOCENT import userbot
-from VIP_INNOCENT.core.mongo import mongodb, pymongodb
+from VIP_DEVA import userbot
+from VIP_DEVA.core.mongo import mongodb, pymongodb
 
 authdb = mongodb.adminauth
 authuserdb = mongodb.authuser
@@ -133,7 +133,7 @@ async def set_assistant_new(chat_id, number):
 
 
 async def set_assistant(chat_id):
-    from VIP_INNOCENT.core.userbot import assistants
+    from VIP_DEVA.core.userbot import assistants
 
     ran_assistant = random.choice(assistants)
     assistantdict[chat_id] = ran_assistant
@@ -147,7 +147,7 @@ async def set_assistant(chat_id):
 
 
 async def get_assistant(chat_id: int) -> str:
-    from VIP_INNOCENT.core.userbot import assistants
+    from VIP_DEVA.core.userbot import assistants
 
     assistant = assistantdict.get(chat_id)
     if not assistant:
@@ -174,7 +174,7 @@ async def get_assistant(chat_id: int) -> str:
 
 
 async def set_calls_assistant(chat_id):
-    from VIP_INNOCENT.core.userbot import assistants
+    from VIP_DEVA.core.userbot import assistants
 
     ran_assistant = random.choice(assistants)
     assistantdict[chat_id] = ran_assistant
@@ -187,7 +187,7 @@ async def set_calls_assistant(chat_id):
 
 
 async def group_assistant(self, chat_id: int) -> int:
-    from VIP_INNOCENT.core.userbot import assistants
+    from VIP_DEVA.core.userbot import assistants
 
     assistant = assistantdict.get(chat_id)
     if not assistant:
