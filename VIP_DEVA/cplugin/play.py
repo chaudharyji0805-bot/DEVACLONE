@@ -5,25 +5,25 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
-from VIP_INNOCENT.utils.database import get_assistant
+from VIP_DEVA.utils.database import get_assistant
 import config
-from VIP_INNOCENT import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
-from VIP_INNOCENT.core.call import INNOCENT
-from VIP_INNOCENT.misc import SUDOERS
-from VIP_INNOCENT.utils.inline import panel_markup_clone
-from VIP_INNOCENT.utils import seconds_to_min, time_to_seconds
-from VIP_INNOCENT.utils.channelplay import get_channeplayCB
-from VIP_INNOCENT.utils.decorators.language import languageCB
-from VIP_INNOCENT.utils.decorators.play import CPlayWrapper
-from VIP_INNOCENT.utils.formatters import formats
-from VIP_INNOCENT.utils.inline import (
+from VIP_DEVA import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
+from VIP_DEVA.core.call import DEVA
+from VIP_DEVA.misc import SUDOERS
+from VIP_DEVA.utils.inline import panel_markup_clone
+from VIP_DEVA.utils import seconds_to_min, time_to_seconds
+from VIP_DEVA.utils.channelplay import get_channeplayCB
+from VIP_DEVA.utils.decorators.language import languageCB
+from VIP_DEVA.utils.decorators.play import CPlayWrapper
+from VIP_DEVA.utils.formatters import formats
+from VIP_DEVA.utils.inline import (
     botplaylist_markup,
     livestream_markup,
     playlist_markup,
     slider_markup,
     track_markup,
 )
-from VIP_INNOCENT.utils.database import (
+from VIP_DEVA.utils.database import (
     add_served_chat_clone,
     add_served_user_clone,
     blacklisted_chats,
@@ -31,11 +31,11 @@ from VIP_INNOCENT.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from VIP_INNOCENT.utils.logger import play_logs, clone_bot_logs
-from VIP_INNOCENT.cplugin.setinfo import get_logging_status, get_log_channel
+from VIP_DEVA.utils.logger import play_logs, clone_bot_logs
+from VIP_DEVA.cplugin.setinfo import get_logging_status, get_log_channel
 from config import BANNED_USERS, lyrical
 from time import time
-from VIP_INNOCENT.utils.extraction import extract_user
+from VIP_DEVA.utils.extraction import extract_user
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
@@ -406,7 +406,7 @@ async def play_commnd(
             return await mystic.delete()
         else:
             try:
-                await INNOCENT.stream_call(url)
+                await DEVA.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(_["black_9"])
                 return await app.send_message(
@@ -590,7 +590,7 @@ async def play_commnd(
                 return await play_logs(message, streamtype=f"URL Searched Inline")
 
 
-# INNOCENT
+# DEVA
 @Client.on_callback_query(filters.regex("MusicStream") & ~BANNED_USERS)
 @languageCB
 async def play_music(client: Client, CallbackQuery, _):
@@ -664,8 +664,8 @@ async def play_music(client: Client, CallbackQuery, _):
     return await mystic.delete()
 
 
-@Client.on_callback_query(filters.regex("INNOCENTmousAdmin") & ~BANNED_USERS)
-async def INNOCENTmous_check(client: Client, CallbackQuery):
+@Client.on_callback_query(filters.regex("DEVAmousAdmin") & ~BANNED_USERS)
+async def DEVAmous_check(client: Client, CallbackQuery):
     try:
         await CallbackQuery.answer(
             "» ʀᴇᴠᴇʀᴛ ʙᴀᴄᴋ ᴛᴏ ᴜsᴇʀ ᴀᴄᴄᴏᴜɴᴛ :\n\nᴏᴘᴇɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ sᴇᴛᴛɪɴɢs.\n-> ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀs\n-> ᴄʟɪᴄᴋ ᴏɴ ʏᴏᴜʀ ɴᴀᴍᴇ\n-> ᴜɴᴄʜᴇᴄᴋ ᴀɴᴏɴʏᴍᴏᴜs ᴀᴅᴍɪɴ ᴘᴇʀᴍɪssɪᴏɴs.",
@@ -675,7 +675,7 @@ async def INNOCENTmous_check(client: Client, CallbackQuery):
         pass
 
 
-@Client.on_callback_query(filters.regex("INNOCENTPlaylists") & ~BANNED_USERS)
+@Client.on_callback_query(filters.regex("DEVAPlaylists") & ~BANNED_USERS)
 @languageCB
 async def play_playlists_command(client: Client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
@@ -818,12 +818,12 @@ from pyrogram import Client
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from VIP_INNOCENT import Carbon, YouTube
-from VIP_INNOCENT.core.call import INNOCENT
-from VIP_INNOCENT.misc import db
-from VIP_INNOCENT.utils.database import add_active_video_chat, is_active_chat
-from VIP_INNOCENT.utils.exceptions import AssistantErr
-from VIP_INNOCENT.utils.inline import (
+from VIP_DEVA import Carbon, YouTube
+from VIP_DEVA.core.call import DEVA
+from VIP_DEVA.misc import db
+from VIP_DEVA.utils.database import add_active_video_chat, is_active_chat
+from VIP_DEVA.utils.exceptions import AssistantErr
+from VIP_DEVA.utils.inline import (
     aq_markup,
     queuemarkup,
     close_markup,
@@ -831,10 +831,10 @@ from VIP_INNOCENT.utils.inline import (
     stream_markup2,
     panel_markup_4,
 )
-from VIP_INNOCENT.utils.pastebin import INNOCENTBin
-from VIP_INNOCENT.utils.stream.queue import put_queue, put_queue_index
+from VIP_DEVA.utils.pastebin import DEVABin
+from VIP_DEVA.utils.stream.queue import put_queue, put_queue_index
 from youtubesearchpython.__future__ import VideosSearch
-from VIP_INNOCENT.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
+from VIP_DEVA.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
 
 
 async def stream(
@@ -864,7 +864,7 @@ async def stream(
     if not result:
         return
     if forceplay:
-        await INNOCENT.force_stop_stream(chat_id)
+        await DEVA.force_stop_stream(chat_id)
     if streamtype == "playlist":
         msg = f"{_['play_19']}\n\n"
         count = 0
@@ -912,7 +912,7 @@ async def stream(
                 except:
 
                     os.system(f"kill -9 {os.getpid()} && bash start")
-                await INNOCENT.join_call(
+                await DEVA.join_call(
                     chat_id,
                     original_chat_id,
                     file_path,
@@ -951,7 +951,7 @@ async def stream(
         if count == 0:
             return
         else:
-            link = await INNOCENTBin(msg)
+            link = await DEVABin(msg)
             lines = msg.count("\n")
             if lines >= 17:
                 car = os.linesep.join(msg.split(os.linesep)[:17])
@@ -1002,7 +1002,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await INNOCENT.join_call(
+            await DEVA.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
@@ -1064,7 +1064,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await INNOCENT.join_call(chat_id, original_chat_id, file_path, video=None)
+            await DEVA.join_call(chat_id, original_chat_id, file_path, video=None)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -1116,7 +1116,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await INNOCENT.join_call(chat_id, original_chat_id, file_path, video=status)
+            await DEVA.join_call(chat_id, original_chat_id, file_path, video=status)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -1172,7 +1172,7 @@ async def stream(
             n, file_path = await YouTube.video(link)
             if n == 0:
                 raise AssistantErr(_["str_3"])
-            await INNOCENT.join_call(
+            await DEVA.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
@@ -1229,7 +1229,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await INNOCENT.join_call(
+            await DEVA.join_call(
                 chat_id,
                 original_chat_id,
                 link,
