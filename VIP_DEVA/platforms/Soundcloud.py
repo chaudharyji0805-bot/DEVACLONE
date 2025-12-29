@@ -2,7 +2,7 @@ from os import path
 
 from yt_dlp import YoutubeDL
 
-from VIP_INNOCENT.utils.formatters import seconds_to_min
+from VIP_DEVA.utils.formatters import seconds_to_min
 
 
 class SoundAPI:
