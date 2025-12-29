@@ -1,8 +1,8 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.utils.VIP_INNOCENT_font import Fonts
+from VIP_DEVA import app
+from VIP_DEVA.utils.VIP_DEVA_font import Fonts
 
 
 @app.on_message(filters.command(["font", "fonts"]))
