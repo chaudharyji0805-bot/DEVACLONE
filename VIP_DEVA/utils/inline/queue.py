@@ -1,6 +1,6 @@
 from typing import Union
-from VIP_INNOCENT import app
-from VIP_INNOCENT.utils.formatters import time_to_seconds
+from VIP_DEVA import app
+from VIP_DEVA.utils.formatters import time_to_seconds
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import config
 
