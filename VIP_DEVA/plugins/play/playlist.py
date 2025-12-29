@@ -12,15 +12,15 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtube_search import YoutubeSearch
 
 from config import BANNED_USERS, SERVER_PLAYLIST_LIMIT
-from VIP_INNOCENT import Carbon, app
-from VIP_INNOCENT.utils.decorators.language import language, languageCB
-from VIP_INNOCENT.utils.inline.playlist import (
+from VIP_DEVA import Carbon, app
+from VIP_DEVA.utils.decorators.language import language, languageCB
+from VIP_DEVA.utils.inline.playlist import (
     botplaylist_markup,
     get_playlist_markup,
     warning_markup,
 )
-from VIP_INNOCENT.utils.pastebin import INNOCENTBin
-from VIP_INNOCENT.utils.stream.stream import stream
+from VIP_DEVA.utils.pastebin import DEVABin
+from VIP_DEVA.utils.stream.stream import stream
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
@@ -28,7 +28,7 @@ user_command_count = {}
 # Define the threshold for command spamming (e.g., 20 commands within 60 seconds)
 SPAM_THRESHOLD = 2
 SPAM_WINDOW_SECONDS = 5
-from VIP_INNOCENT.core.mongo import mongodb
+from VIP_DEVA.core.mongo import mongodb
 
 playlistdb = mongodb.playlist
 playlist = []
@@ -127,7 +127,7 @@ async def check_playlist(client, message: Message, _):
         count += 1
         msg += f"\n\n{count}- {title[:70]}\n"
         msg += _["playlist_5"].format(duration)
-    link = await INNOCENTBin(msg)
+    link = await DEVABin(msg)
     lines = msg.count("\n")
     if lines >= 17:
         car = os.linesep.join(msg.split(os.linesep)[:17])
@@ -478,7 +478,7 @@ async def add_playlist(client, message: Message, _):
         except Exception as e:
             return await message.reply_text(str(e))
     else:
-        from VIP_INNOCENT import YouTube
+        from VIP_DEVA import YouTube
 
         # Add a specific song by name
         query = " ".join(message.command[1:])
@@ -598,7 +598,7 @@ async def del_plist(client, CallbackQuery, _):
 @app.on_callback_query(filters.regex("recover_playlist") & ~BANNED_USERS)
 @languageCB
 async def add_playlist(client, CallbackQuery, _):
-    from VIP_INNOCENT import YouTube
+    from VIP_DEVA import YouTube
 
     callback_data = CallbackQuery.data.strip()
     videoid = callback_data.split(None, 1)[1]
@@ -661,13 +661,13 @@ async def add_playlist(client, CallbackQuery, _):
     )
 
 
-@app.on_callback_query(filters.regex("INNOCENT_playlist") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("DEVA_playlist") & ~BANNED_USERS)
 @languageCB
 async def add_playlists(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     videoid = callback_data.split(None, 1)[1]
     user_id = CallbackQuery.from_user.id
-    from VIP_INNOCENT import YouTube
+    from VIP_DEVA import YouTube
 
     _check = await get_playlist(user_id, videoid)
     if _check:
