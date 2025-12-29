@@ -5,8 +5,8 @@ from pyrogram.enums import ChatType
 from pyrogram.enums import ChatType, ChatMemberStatus
 from pyrogram.errors import UserNotParticipant
 from pyrogram.types import ChatPermissions
-from VIP_INNOCENT import app
-from VIP_INNOCENT.utils.VIP_INNOCENT_ban import admin_filter
+from VIP_DEVA import app
+from VIP_DEVA.utils.VIP_DEVA_ban import admin_filter
 
 SPAM_CHATS = {}
 
