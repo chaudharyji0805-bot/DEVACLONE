@@ -1,9 +1,9 @@
 from pyrogram import filters, Client
 import os
-from VIP_INNOCENT import YouTube, app
-from VIP_INNOCENT.utils.channelplay import get_channeplayCB
-from VIP_INNOCENT.utils.decorators.language import languageCB
-from VIP_INNOCENT.utils.stream.stream import stream
+from VIP_DEVA import YouTube, app
+from VIP_DEVA.utils.channelplay import get_channeplayCB
+from VIP_DEVA.utils.decorators.language import languageCB
+from VIP_DEVA.utils.stream.stream import stream
 from config import BANNED_USERS
 
 
@@ -60,4 +60,4 @@ async def play_live_stream(client, CallbackQuery, _):
         return await mystic.edit_text("» ɴᴏᴛ ᴀ ʟɪᴠᴇ sᴛʀᴇᴀᴍ.")
     await mystic.delete()
 
-# INNOCENT
+# DEVA
