@@ -1,11 +1,11 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from VIP_INNOCENT import YouTube, app
-from VIP_INNOCENT.core.call import INNOCENT
-from VIP_INNOCENT.misc import db
-from VIP_INNOCENT.utils import AdminRightsCheck, seconds_to_min
-from VIP_INNOCENT.utils.inline import close_markup
+from VIP_DEVA import YouTube, app
+from VIP_DEVA.core.call import DEVA
+from VIP_DEVA.misc import db
+from VIP_DEVA.utils import AdminRightsCheck, seconds_to_min
+from VIP_DEVA.utils.inline import close_markup
 from config import BANNED_USERS
 
 
@@ -56,7 +56,7 @@ async def seek_comm(cli, message: Message, _, chat_id):
     if "index_" in file_path:
         file_path = playing[0]["vidid"]
     try:
-        await INNOCENT.seek_stream(
+        await DEVA.seek_stream(
             chat_id,
             file_path,
             seconds_to_min(to_seek),
