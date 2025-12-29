@@ -1,15 +1,15 @@
 from typing import Union
 from pyrogram import filters, types
 from pyrogram.types import InlineKeyboardMarkup, Message, InlineKeyboardButton
-from VIP_INNOCENT import app
-from VIP_INNOCENT.utils import help_pannel
-from VIP_INNOCENT.utils.database import get_lang
-from VIP_INNOCENT.utils.decorators.language import LanguageStart, languageCB
-from VIP_INNOCENT.utils.inline.help import help_back_markup, private_help_panel
+from VIP_DEVA import app
+from VIP_DEVA.utils import help_pannel
+from VIP_DEVA.utils.database import get_lang
+from VIP_DEVA.utils.decorators.language import LanguageStart, languageCB
+from VIP_DEVA.utils.inline.help import help_back_markup, private_help_panel
 from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
 from strings import get_string, helpers
-from VIP_INNOCENT.utils.stuffs.buttons import BUTTONS
-from VIP_INNOCENT.utils.stuffs.helper import Helper
+from VIP_DEVA.utils.stuffs.buttons import BUTTONS
+from VIP_DEVA.utils.stuffs.helper import Helper
 
 @app.on_message(filters.command(["help"]) & filters.private & ~BANNED_USERS)
 @app.on_callback_query(filters.regex("settings_back_helper") & ~BANNED_USERS)
