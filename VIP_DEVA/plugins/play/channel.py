@@ -2,9 +2,9 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
 from pyrogram.types import Message
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.utils.database import set_cmode
-from VIP_INNOCENT.utils.decorators.admins import AdminActual
+from VIP_DEVA import app
+from VIP_DEVA.utils.database import set_cmode
+from VIP_DEVA.utils.decorators.admins import AdminActual
 from config import BANNED_USERS
 
 
