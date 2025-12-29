@@ -4,7 +4,7 @@ import textwrap
 from PIL import Image, ImageDraw, ImageFont
 from pyrogram import filters
 from pyrogram.types import Message
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 
 @app.on_message(filters.command("mmf"))
 async def mmf(_, message: Message):
@@ -37,7 +37,7 @@ async def drawText(image_path, text):
     if os.name == "nt":
         fnt = "arial.ttf"
     else:
-        fnt = "./VIP_INNOCENT/assets/font.ttf"
+        fnt = "./VIP_DEVA/assets/font.ttf"
 
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
 
