@@ -1,4 +1,4 @@
-from VIP_INNOCENT.core.mongo import mongodb, pymongodb
+from VIP_DEVA.core.mongo import mongodb, pymongodb
 from typing import Dict, List, Union
 
 cloneownerdb = mongodb.cloneownerdb
