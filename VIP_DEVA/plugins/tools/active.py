@@ -2,9 +2,9 @@ from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from unidecode import unidecode
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.misc import SUDOERS
-from VIP_INNOCENT.utils.database import (
+from VIP_DEVA import app
+from VIP_DEVA.misc import SUDOERS
+from VIP_DEVA.utils.database import (
     get_active_chats,
     get_active_video_chats,
     remove_active_chat,
