@@ -12,12 +12,12 @@ from pyrogram import filters
 
 load_dotenv()
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.core.call import INNOCENT
-from VIP_INNOCENT.misc import db
-from VIP_INNOCENT.utils.database import get_assistant, get_authuser_names, get_cmode
-from VIP_INNOCENT.utils.decorators import ActualAdminCB, AdminActual, language
-from VIP_INNOCENT.utils.formatters import alpha_to_int, get_readable_time
+from VIP_DEVA import app
+from VIP_DEVA.core.call import DEVA
+from VIP_DEVA.misc import db
+from VIP_DEVA.utils.database import get_assistant, get_authuser_names, get_cmode
+from VIP_DEVA.utils.decorators import ActualAdminCB, AdminActual, language
+from VIP_DEVA.utils.formatters import alpha_to_int, get_readable_time
 from config import BANNED_USERS, adminlist, lyrical
 
 BOT_TOKEN = getenv("BOT_TOKEN", "")
@@ -72,7 +72,7 @@ async def restartbot(client, message: Message, _):
     await asyncio.sleep(1)
     try:
         db[message.chat.id] = []
-        await INNOCENT.stop_stream_force(message.chat.id)
+        await DEVA.stop_stream_force(message.chat.id)
     except:
         pass
     userbot = await get_assistant(message.chat.id)
@@ -99,7 +99,7 @@ async def restartbot(client, message: Message, _):
             pass
         try:
             db[chat_id] = []
-            await INNOCENT.stop_stream_force(chat_id)
+            await DEVA.stop_stream_force(chat_id)
         except:
             pass
     return await mystic.edit_text(_["reload_5"].format(i.mention))
