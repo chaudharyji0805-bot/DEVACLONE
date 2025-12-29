@@ -1,10 +1,10 @@
 from pyrogram import enums
 from pyrogram.enums import ChatType
 from pyrogram import filters, Client
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 from config import OWNER_ID
 from pyrogram.types import Message
-from VIP_INNOCENT.utils.VIP_INNOCENT_ban import admin_filter
+from VIP_DEVA.utils.VIP_DEVA_ban import admin_filter
 from pyrogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
 
 # ------------------------------------------------------------------------------- #
