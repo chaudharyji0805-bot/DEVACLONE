@@ -2,9 +2,9 @@ import time, re
 from pyrogram.enums import MessageEntityType
 from pyrogram import filters
 from pyrogram.types import Message
-from VIP_INNOCENT import app
-from VIP_INNOCENT.mongo.readable_time import get_readable_time
-from VIP_INNOCENT.mongo.afkdb import add_afk, is_afk, remove_afk
+from VIP_DEVA import app
+from VIP_DEVA.mongo.readable_time import get_readable_time
+from VIP_DEVA.mongo.afkdb import add_afk, is_afk, remove_afk
 
 
 @app.on_message(filters.command(["afk", "brb"], prefixes=["/", "!"]))
