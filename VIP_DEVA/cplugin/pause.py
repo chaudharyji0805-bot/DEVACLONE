@@ -1,15 +1,15 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from VIP_INNOCENT import app
-from VIP_INNOCENT.core.call import INNOCENT
-from VIP_INNOCENT.utils.decorators import AdminRightsCheck
-from VIP_INNOCENT.utils.inline import close_markup
+from VIP_DEVA import app
+from VIP_DEVA.core.call import DEVA
+from VIP_DEVA.utils.decorators import AdminRightsCheck
+from VIP_DEVA.utils.inline import close_markup
 from config import BANNED_USERS
 import random
 from typing import Dict, List, Union
 
-from VIP_INNOCENT import userbot
-from VIP_INNOCENT.core.mongo import mongodb, pymongodb
+from VIP_DEVA import userbot
+from VIP_DEVA.core.mongo import mongodb, pymongodb
 
 authdb = mongodb.adminauth
 authuserdb = mongodb.authuser
@@ -79,7 +79,7 @@ async def music_off(chat_id: int):
 async def pause_admin(cli, message: Message, _, chat_id):
 
     await music_off(chat_id)
-    await INNOCENT.pause_stream(chat_id)
+    await DEVA.pause_stream(chat_id)
 
     buttons = [
         [
