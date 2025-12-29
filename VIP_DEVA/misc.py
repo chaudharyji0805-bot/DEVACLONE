@@ -5,7 +5,7 @@ import heroku3
 from pyrogram import filters
 
 import config
-from VIP_DEVA.core.mongo import mongodb
+from VIP_INNOCENT.core.mongo import mongodb
 
 from .logging import LOGGER
 
