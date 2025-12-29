@@ -12,17 +12,17 @@ from pyrogram.types import Message
 
 from config import BANNED_USERS, adminlist
 from strings import get_string
-from VIP_INNOCENT import app
-from VIP_INNOCENT.misc import SUDOERS
-from VIP_INNOCENT.utils.database import (
+from VIP_DEVA import app
+from VIP_DEVA.misc import SUDOERS
+from VIP_DEVA.utils.database import (
     get_assistant,
     get_cmode,
     get_lang,
     get_playmode,
     get_playtype,
 )
-from VIP_INNOCENT.utils.logger import play_logs
-from VIP_INNOCENT.utils.stream.stream import stream
+from VIP_DEVA.utils.logger import play_logs
+from VIP_DEVA.utils.stream.stream import stream
 
 RADIO_STATION = {
     "Air Bilaspur": "http://air.pc.cdn.bitgravity.com/air/live/pbaudio110/playlist.m3u8",
