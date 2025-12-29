@@ -1,8 +1,8 @@
-from VIP_INNOCENT.misc import SUDOERS
-from VIP_INNOCENT.utils.database import get_lang, is_maintenance
+from VIP_DEVA.misc import SUDOERS
+from VIP_DEVA.utils.database import get_lang, is_maintenance
 from strings import get_string
 from config import SUPPORT_CHAT
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 
 
 def language(mystic):
