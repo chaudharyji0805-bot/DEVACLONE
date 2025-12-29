@@ -1,7 +1,7 @@
 import os
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 import requests
 
 
