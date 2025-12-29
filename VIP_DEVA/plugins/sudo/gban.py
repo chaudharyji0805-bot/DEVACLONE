@@ -4,10 +4,10 @@ from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.misc import SUDOERS
-from VIP_INNOCENT.utils import get_readable_time
-from VIP_INNOCENT.utils.database import (
+from VIP_DEVA import app
+from VIP_DEVA.misc import SUDOERS
+from VIP_DEVA.utils import get_readable_time
+from VIP_DEVA.utils.database import (
     add_banned_user,
     get_banned_count,
     get_banned_users,
@@ -15,8 +15,8 @@ from VIP_INNOCENT.utils.database import (
     is_banned_user,
     remove_banned_user,
 )
-from VIP_INNOCENT.utils.decorators.language import language
-from VIP_INNOCENT.utils.extraction import extract_user
+from VIP_DEVA.utils.decorators.language import language
+from VIP_DEVA.utils.extraction import extract_user
 from config import BANNED_USERS
 
 
