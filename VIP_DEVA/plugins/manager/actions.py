@@ -4,7 +4,7 @@ from pyrogram.errors import ChatAdminRequired, UserAdminInvalid
 import asyncio
 import datetime
 from functools import wraps
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 
 def mention(user_id, name):
     return f"[{name}](tg://user?id={user_id})"
