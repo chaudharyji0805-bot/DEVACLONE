@@ -9,9 +9,9 @@ from pyrogram.errors import (
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from VIP_INNOCENT import YouTube, app
-from VIP_INNOCENT.misc import SUDOERS
-from VIP_INNOCENT.utils.database import (
+from VIP_DEVA import YouTube, app
+from VIP_DEVA.misc import SUDOERS
+from VIP_DEVA.utils.database import (
     get_assistant,
     get_cmode,
     get_lang,
@@ -20,7 +20,7 @@ from VIP_INNOCENT.utils.database import (
     is_active_chat,
     is_maintenance,
 )
-from VIP_INNOCENT.utils.inline import botplaylist_markup
+from VIP_DEVA.utils.inline import botplaylist_markup
 from config import PLAYLIST_IMG_URL, SUPPORT_CHAT, adminlist
 from strings import get_string
 
