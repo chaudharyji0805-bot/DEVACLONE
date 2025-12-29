@@ -10,19 +10,19 @@ from pyrogram.errors.exceptions.bad_request_400 import (
     AccessTokenExpired,
     AccessTokenInvalid,
 )
-from VIP_INNOCENT.utils.database import get_assistant
+from VIP_DEVA.utils.database import get_assistant
 from config import API_ID, API_HASH
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 from config import OWNER_ID
-from VIP_INNOCENT.misc import SUDOERS
-from VIP_INNOCENT.utils.database import get_assistant, clonebotdb
-from VIP_INNOCENT.utils.database.clonedb import has_user_cloned_any_bot
+from VIP_DEVA.misc import SUDOERS
+from VIP_DEVA.utils.database import get_assistant, clonebotdb
+from VIP_DEVA.utils.database.clonedb import has_user_cloned_any_bot
 from config import LOGGER_ID, CLONE_LOGGER
 import requests
-from VIP_INNOCENT.utils.decorators.language import language
+from VIP_DEVA.utils.decorators.language import language
 import pyrogram.errors
 
-from VIP_INNOCENT.utils.database.clonedb import get_owner_id_from_db
+from VIP_DEVA.utils.database.clonedb import get_owner_id_from_db
 from config import SUPPORT_CHAT, OWNER_ID, BOT_USERNAME, SUPPORT_CHANNEL
 
 from datetime import datetime
@@ -68,7 +68,7 @@ async def clone_txt(client, message, _):
                 API_ID,
                 API_HASH,
                 bot_token=bot_token,
-                plugins=dict(root="VIP_INNOCENT.cplugin"), 
+                plugins=dict(root="VIP_DEVA.cplugin"), 
             )
             await ai.start()
             bot = await ai.get_me()
@@ -219,7 +219,7 @@ async def restart_bots():
                 API_ID,
                 API_HASH,
                 bot_token=bot_token,
-                plugins=dict(root="VIP_INNOCENT.cplugin"),
+                plugins=dict(root="VIP_DEVA.cplugin"),
             )
             await ai.start()
             print(botNumber)
