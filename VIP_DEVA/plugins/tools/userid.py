@@ -1,4 +1,4 @@
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 from pyrogram import Client, filters
 
 from pyrogram.enums import ParseMode
