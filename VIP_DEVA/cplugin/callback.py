@@ -8,13 +8,13 @@ from pyrogram.errors import (
     UserNotParticipant,
 )
 import config
-from VIP_INNOCENT.utils.database import get_assistant
+from VIP_DEVA.utils.database import get_assistant
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
-from VIP_INNOCENT import YouTube, app
-from VIP_INNOCENT.core.call import INNOCENT
-from VIP_INNOCENT.misc import SUDOERS, db
-from VIP_INNOCENT.utils.database import (
+from VIP_DEVA import YouTube, app
+from VIP_DEVA.core.call import DEVA
+from VIP_DEVA.misc import SUDOERS, db
+from VIP_DEVA.utils.database import (
     get_active_chats,
     get_lang,
     get_upvote_count,
@@ -28,9 +28,9 @@ from VIP_INNOCENT.utils.database import (
     is_muted,
     set_loop,
 )
-from VIP_INNOCENT.utils.decorators.language import languageCB
-from VIP_INNOCENT.utils.formatters import seconds_to_min
-from VIP_INNOCENT.utils.inline import (
+from VIP_DEVA.utils.decorators.language import languageCB
+from VIP_DEVA.utils.formatters import seconds_to_min
+from VIP_DEVA.utils.inline import (
     close_markup,
     stream_markup,
     stream_markup_timer,
@@ -52,8 +52,8 @@ from VIP_INNOCENT.utils.inline import (
     queue_markup,
     panel_markup_1,
 )
-from VIP_INNOCENT.utils.stream.autoclear import auto_clean
-from VIP_INNOCENT.utils.thumbnails import get_thumb
+from VIP_DEVA.utils.stream.autoclear import auto_clean
+from VIP_DEVA.utils.thumbnails import get_thumb
 from config import (
     BANNED_USERS,
     SOUNCLOUD_IMG_URL,
@@ -66,7 +66,7 @@ from config import (
 )
 from strings import get_string
 from config import lyrical
-from VIP_INNOCENT.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
+from VIP_DEVA.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
 
 wrong = {}
 
@@ -301,7 +301,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_1"], show_alert=True)
         await CallbackQuery.answer()
         await music_off(chat_id)
-        await INNOCENT.pause_stream(chat_id)
+        await DEVA.pause_stream(chat_id)
         buttons = [
             [
                 InlineKeyboardButton(
@@ -320,7 +320,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_3"], show_alert=True)
         await CallbackQuery.answer()
         await music_on(chat_id)
-        await INNOCENT.resume_stream(chat_id)
+        await DEVA.resume_stream(chat_id)
         buttons_resume = [
             [
                 InlineKeyboardButton(
@@ -344,7 +344,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         )
     elif command == "Stop" or command == "End":
         await CallbackQuery.answer()
-        await INNOCENT.stop_stream(chat_id)
+        await DEVA.stop_stream(chat_id)
         await set_loop(chat_id, 0)
         await CallbackQuery.message.reply_text(
             _["admin_5"].format(mention), reply_markup=close_markup(_)
@@ -355,14 +355,14 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_45"], show_alert=True)
         await CallbackQuery.answer()
         await mute_on(chat_id)
-        await INNOCENT.mute_stream(chat_id)
+        await DEVA.mute_stream(chat_id)
         await CallbackQuery.message.reply_text(_["admin_46"].format(mention))
     elif command == "Unmute":
         if not await is_muted(chat_id):
             return await CallbackQuery.answer(_["admin_47"], show_alert=True)
         await CallbackQuery.answer()
         await mute_off(chat_id)
-        await INNOCENT.unmute_stream(chat_id)
+        await DEVA.unmute_stream(chat_id)
         await CallbackQuery.message.reply_text(_["admin_48"].format(mention))
     elif command == "Loop":
         await CallbackQuery.answer()
@@ -404,7 +404,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         reply_markup=close_markup(_),
                     )
                     try:
-                        return await INNOCENT.stop_stream(chat_id)
+                        return await DEVA.stop_stream(chat_id)
                     except:
                         return
             except:
@@ -418,7 +418,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         ),
                         reply_markup=close_markup(_),
                     )
-                    return await INNOCENT.stop_stream(chat_id)
+                    return await DEVA.stop_stream(chat_id)
                 except:
                     return
         else:
@@ -450,7 +450,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 image = None
             try:
-                await INNOCENT.skip_stream(chat_id, link, video=status, image=image)
+                await DEVA.skip_stream(chat_id, link, video=status, image=image)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             button = stream_markup2(_, chat_id)
@@ -486,7 +486,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 image = None
             try:
-                await INNOCENT.skip_stream(chat_id, file_path, video=status, image=image)
+                await DEVA.skip_stream(chat_id, file_path, video=status, image=image)
             except:
                 return await mystic.edit_text(_["call_6"])
             button = stream_markup(_, chat_id)
@@ -507,7 +507,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             await mystic.delete()
         elif "index_" in queued:
             try:
-                await INNOCENT.skip_stream(chat_id, videoid, video=status)
+                await DEVA.skip_stream(chat_id, videoid, video=status)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             button = stream_markup2(_, chat_id)
@@ -530,7 +530,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 except:
                     image = None
             try:
-                await INNOCENT.skip_stream(chat_id, queued, video=status, image=image)
+                await DEVA.skip_stream(chat_id, queued, video=status, image=image)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             if videoid == "telegram":
@@ -619,7 +619,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             if n == 0:
                 return await mystic.edit_text(_["admin_22"])
         try:
-            await INNOCENT.seek_stream(
+            await DEVA.seek_stream(
                 chat_id,
                 file_path,
                 seconds_to_min(to_seek),
@@ -635,7 +635,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         string = _["admin_25"].format(seconds_to_min(to_seek))
         await mystic.edit_text(f"{string}\n\nᴄʜᴀɴɢᴇs ᴅᴏɴᴇ ʙʏ : {mention} !")
 
-# INNOCENT
+# DEVA
 async def markup_timer():
     while not await asyncio.sleep(300):
         active_chats = await get_active_chats()
