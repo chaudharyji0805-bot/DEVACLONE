@@ -6,11 +6,11 @@ import psutil
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 from config import PING_IMG_URL, STREAMI_PICS, BOT_USERNAME
 from .utils import StartTime
-from VIP_INNOCENT.utils import get_readable_time
-from VIP_INNOCENT.utils.decorators.language import language
+from VIP_DEVA.utils import get_readable_time
+from VIP_DEVA.utils.decorators.language import language
 
 APP_LINK = f"https://t.me/{BOT_USERNAME}"
 
