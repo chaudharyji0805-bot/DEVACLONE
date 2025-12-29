@@ -6,8 +6,8 @@ import lyricsgenius as lg
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.utils.decorators.language import language
+from VIP_DEVA import app
+from VIP_DEVA.utils.decorators.language import language
 
 from config import BANNED_USERS, lyrical
 
