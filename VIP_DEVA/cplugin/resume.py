@@ -1,14 +1,14 @@
 from pyrogram import filters, Client
 from pyrogram.types import Message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from VIP_INNOCENT import app
-from VIP_INNOCENT.core.call import INNOCENT
+from VIP_DEVA import app
+from VIP_DEVA.core.call import DEVA
 
-from VIP_INNOCENT.utils.decorators import AdminRightsCheck
-from VIP_INNOCENT.utils.inline import close_markup
+from VIP_DEVA.utils.decorators import AdminRightsCheck
+from VIP_DEVA.utils.inline import close_markup
 from config import BANNED_USERS
-from VIP_INNOCENT import userbot
-from VIP_INNOCENT.core.mongo import mongodb, pymongodb
+from VIP_DEVA import userbot
+from VIP_DEVA.core.mongo import mongodb, pymongodb
 
 authdb = mongodb.adminauth
 authuserdb = mongodb.authuser
@@ -81,7 +81,7 @@ async def resume_com(cli, message: Message, _, chat_id):
     if await is_music_playing(chat_id):
         return await message.reply_text(_["admin_3"])
     await music_on(chat_id)
-    await INNOCENT.resume_stream(chat_id)
+    await DEVA.resume_stream(chat_id)
     buttons_resume = [
         [
             InlineKeyboardButton(text="sᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}"),
