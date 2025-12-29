@@ -4,17 +4,17 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.errors import FloodWait
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.misc import SUDOERS
-from VIP_INNOCENT.utils.database import (
+from VIP_DEVA import app
+from VIP_DEVA.misc import SUDOERS
+from VIP_DEVA.utils.database import (
     get_active_chats,
     get_authuser_names,
     get_client,
     get_served_chats,
     get_served_users,
 )
-from VIP_INNOCENT.utils.decorators.language import language
-from VIP_INNOCENT.utils.formatters import alpha_to_int
+from VIP_DEVA.utils.decorators.language import language
+from VIP_DEVA.utils.formatters import alpha_to_int
 from config import adminlist
 
 IS_BROADCASTING = False
@@ -117,7 +117,7 @@ async def braodcast_message(client, message, _):
     if "-assistant" in message.text:
         aw = await message.reply_text(_["broad_5"])
         text = _["broad_6"]
-        from VIP_INNOCENT.core.userbot import assistants
+        from VIP_DEVA.core.userbot import assistants
 
         for num in assistants:
             sent = 0
