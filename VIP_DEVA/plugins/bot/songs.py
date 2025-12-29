@@ -16,10 +16,10 @@ from config import (
     SONG_DOWNLOAD_DURATION,
     SONG_DOWNLOAD_DURATION_LIMIT,
 )
-from VIP_INNOCENT import YouTube, app
-from VIP_INNOCENT.utils.decorators.language import language, languageCB
-from VIP_INNOCENT.utils.formatters import convert_bytes
-from VIP_INNOCENT.utils.inline.song import song_markup
+from VIP_DEVA import YouTube, app
+from VIP_DEVA.utils.decorators.language import language, languageCB
+from VIP_DEVA.utils.formatters import convert_bytes
+from VIP_DEVA.utils.inline.song import song_markup
 
 # Song Module
 
