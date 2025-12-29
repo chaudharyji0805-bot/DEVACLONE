@@ -11,7 +11,7 @@ from time import time
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from VIP_INNOCENT import app
+from VIP_DEVA import app
 from config import OWNER_ID
 ###########
 
