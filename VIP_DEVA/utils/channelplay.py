@@ -1,5 +1,5 @@
-from VIP_INNOCENT import app
-from VIP_INNOCENT.utils.database import get_cmode
+from VIP_DEVA import app
+from VIP_DEVA.utils.database import get_cmode
 
 
 async def get_channeplayCB(_, command, CallbackQuery):
