@@ -4,15 +4,15 @@ from datetime import datetime
 from pyrogram.enums import ChatType
 
 import config
-from VIP_INNOCENT import app
-from VIP_INNOCENT.core.call import INNOCENT, autoend
-from VIP_INNOCENT.utils.database import get_client, is_active_chat, is_autoend
+from VIP_DEVA import app
+from VIP_DEVA.core.call import DEVA, autoend
+from VIP_DEVA.utils.database import get_client, is_active_chat, is_autoend
 
 
 async def auto_leave():
     if config.AUTO_LEAVING_ASSISTANT:
         while not await asyncio.sleep("900"):
-            from VIP_INNOCENT.core.userbot import assistants
+            from VIP_DEVA.core.userbot import assistants
 
             for num in assistants:
                 client = await get_client(num)
@@ -57,7 +57,7 @@ async def auto_end():
                     continue
                 autoend[chat_id] = {}
                 try:
-                    await INNOCENT.stop_stream(chat_id)
+                    await DEVA.stop_stream(chat_id)
                 except:
                     continue
                 try:
