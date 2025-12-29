@@ -1,4 +1,4 @@
-from VIP_INNOCENT import app 
+from VIP_DEVA import app 
 import asyncio
 import random
 import config
