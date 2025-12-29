@@ -1,8 +1,8 @@
-from VIP_INNOCENT.core.bot import INNOCENT
-from VIP_INNOCENT.core.dir import dirr
-from VIP_INNOCENT.core.git import git
-from VIP_INNOCENT.core.userbot import Userbot
-from VIP_INNOCENT.misc import dbb, heroku
+from VIP_DEVA.core.bot import DEVA
+from VIP_DEVA.core.dir import dirr
+from VIP_DEVA.core.git import git
+from VIP_DEVA.core.userbot import Userbot
+from VIP_DEVA.misc import dbb, heroku
 from pyrogram import Client
 from SafoneAPI import SafoneAPI
 from .logging import LOGGER
@@ -12,7 +12,7 @@ git()
 dbb()
 heroku()
 
-app = INNOCENT()
+app = DEVA()
 api = SafoneAPI()
 userbot = Userbot()
 
