@@ -1,13 +1,13 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.core.call import INNOCENT
-from VIP_INNOCENT.misc import SUDOERS, db
-from VIP_INNOCENT.utils import AdminRightsCheck
-from VIP_INNOCENT.utils.database import is_active_chat, is_nonadmin_chat
-from VIP_INNOCENT.utils.decorators.language import languageCB
-from VIP_INNOCENT.utils.inline import close_markup, speed_markup
+from VIP_DEVA import app
+from VIP_DEVA.core.call import DEVA
+from VIP_DEVA.misc import SUDOERS, db
+from VIP_DEVA.utils import AdminRightsCheck
+from VIP_DEVA.utils.database import is_active_chat, is_nonadmin_chat
+from VIP_DEVA.utils.decorators.language import languageCB
+from VIP_DEVA.utils.inline import close_markup, speed_markup
 from config import BANNED_USERS, adminlist
 
 checker = []
@@ -94,7 +94,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         text=_["admin_32"].format(CallbackQuery.from_user.mention),
     )
     try:
-        await INNOCENT.speedup_stream(
+        await DEVA.speedup_stream(
             chat_id,
             file_path,
             speed,
