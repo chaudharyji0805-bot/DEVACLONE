@@ -4,22 +4,22 @@ from pyrogram import filters, Client
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.errors import FloodWait
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.misc import SUDOERS
-from VIP_INNOCENT.utils.database import (
+from VIP_DEVA import app
+from VIP_DEVA.misc import SUDOERS
+from VIP_DEVA.utils.database import (
     get_client,
     get_served_chats_clone,
     get_served_users_clone,
 )
-from VIP_INNOCENT.utils.decorators.language import language
-from VIP_INNOCENT.utils.formatters import alpha_to_int
+from VIP_DEVA.utils.decorators.language import language
+from VIP_DEVA.utils.formatters import alpha_to_int
 from config import adminlist
 import random
 from typing import Dict, List, Union
 
-from VIP_INNOCENT import userbot
-from VIP_INNOCENT.core.mongo import mongodb, pymongodb
-from VIP_INNOCENT.utils.database.clonedb import get_owner_id_from_db, check_bot_premium
+from VIP_DEVA import userbot
+from VIP_DEVA.core.mongo import mongodb, pymongodb
+from VIP_DEVA.utils.database.clonedb import get_owner_id_from_db, check_bot_premium
 from config import SUPPORT_CHAT, OWNER_ID
 
 authdb = mongodb.adminauth
@@ -260,6 +260,6 @@ async def broadcast_message(client, message, _):
         except:
             pass
 
-# INNOCENT
+# DEVA
 
     IS_BROADCASTING = False
