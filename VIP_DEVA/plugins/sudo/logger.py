@@ -1,9 +1,9 @@
 from pyrogram import filters
 
-from VIP_INNOCENT import app
-from VIP_INNOCENT.misc import SUDOERS
-from VIP_INNOCENT.utils.database import add_off, add_on
-from VIP_INNOCENT.utils.decorators.language import language
+from VIP_DEVA import app
+from VIP_DEVA.misc import SUDOERS
+from VIP_DEVA.utils.database import add_off, add_on
+from VIP_DEVA.utils.decorators.language import language
 
 
 @app.on_message(filters.command(["logger"]) & SUDOERS)
