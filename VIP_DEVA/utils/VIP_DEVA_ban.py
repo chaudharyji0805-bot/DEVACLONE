@@ -1,5 +1,5 @@
 from pyrogram import filters
-from VIP_INNOCENT.utils.admin_check import admin_check
+from VIP_DEVA.utils.admin_check import admin_check
 
 
 USE_AS_BOT = True
