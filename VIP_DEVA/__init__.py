@@ -8,7 +8,14 @@ from SafoneAPI import SafoneAPI
 from .logging import LOGGER
 
 dirr()
-git()
+
+# ✅ Heroku/hosted pe by default OFF
+import os
+if os.getenv("AUTO_GIT_UPDATE", "false").lower() in ("1", "true", "yes"):
+    git()
+else:
+    LOGGER(__name__).info("AUTO_GIT_UPDATE disabled, skipping git updater.")
+
 dbb()
 heroku()
 
@@ -25,3 +32,4 @@ Spotify = SpotifyAPI()
 Resso = RessoAPI()
 Telegram = TeleAPI()
 YouTube = YouTubeAPI()
+
