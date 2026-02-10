@@ -1,2 +1,1 @@
-python-3.10
-numpy==1.21.6
+python-3.11.4
