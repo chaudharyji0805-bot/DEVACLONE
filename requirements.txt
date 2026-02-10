@@ -42,6 +42,7 @@ pyttsx3
 pytz
 pytube
 pytgcalls>=2.0.0
+ntgcalls==2.1.0
 pyyaml==6.0.1
 qrcode
 requests
